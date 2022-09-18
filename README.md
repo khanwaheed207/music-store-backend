@@ -1,4 +1,4 @@
-# ![Music store backend APIs]
+# Music store backend APIs
 
 # Getting started
 
