@@ -11,10 +11,10 @@ module.exports = function(app) {
     });
 
     app.get("/api/instruments/:id", [authJwt.verifyToken], instrumentsCtrl.findOne);
-    app.get("/api/instruments", [authJwt.verifyToken], instrumentsCtrl.findAll);
+    app.get("/api/instruments",instrumentsCtrl.findAll);
     app.get("/api/top/instruments", instrumentsCtrl.topInstruments);
     app.post("/api/instruments", [authJwt.verifyToken], instrumentsCtrl.create);
-    app.put("/api/instruments", [authJwt.verifyToken], instrumentsCtrl.update);
+    app.put("/api/instruments/:id", [authJwt.verifyToken], instrumentsCtrl.update);
     app.delete("/api/instruments/:id", [authJwt.verifyToken], instrumentsCtrl.delete);
 
 };

@@ -20,6 +20,12 @@ verifyToken = (req, res, next) => {
       response.status = "FAILED";
       return res.status(401).send(response);
     }
+
+    if (!decoded.id) {
+      response.message = "Unauthenticated user : Access denied, Invalid access token.";
+      response.status = "FAILED";
+      return res.status(401).send(response);
+    }
     req.userId = decoded.id;
     next();
   });

@@ -1,3 +1,4 @@
+require('dotenv').config();
 module.exports = {
-  secret: "khanwahid-secret-key"
+  secret: process.env.SEC_KEY
 };

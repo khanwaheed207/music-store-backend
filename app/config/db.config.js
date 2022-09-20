@@ -1,7 +1,9 @@
+require('dotenv').config();
+
 module.exports = {
-  HOST: "localhost",
-  USER: "root",
-  PASSWORD: "root",
+  HOST: process.env.DB_HOST,
+  USER: process.env.DB_USERNAME,
+  PASSWORD: process.env.DB_PASSWORD,
   DB: "music_store_db",
   dialect: "mysql",
   pool: {

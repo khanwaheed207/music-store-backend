@@ -1,5 +1,6 @@
 const express = require("express");
 const cors = require("cors");
+require('dotenv').config();
 
 const app = express();
 
@@ -63,3 +64,4 @@ function initial() {
     name: "ROLE_USER"
   });
 }
+console.log(`YourDB_HOST is ----------------------${process.env.DB_HOST}`);

@@ -14,7 +14,7 @@ module.exports = function(app) {
     app.get("/api/order", [authJwt.verifyToken], musicCtrl.findAll);
 
     // Get orders by id
-    app.get( "/api/order/{id}", [authJwt.verifyToken], musicCtrl.findOne );
+    app.get( "/api/order/:id", [authJwt.verifyToken], musicCtrl.findOne );
 
     // Post orders
     app.post( "/api/order", [authJwt.verifyToken], musicCtrl.create );
