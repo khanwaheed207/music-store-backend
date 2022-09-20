@@ -28,9 +28,9 @@ db.sequelize.sync();
 // });
 
 // Create default Roles
-db.sequelize.sync().then(() => {
-  initial();
-});
+// db.sequelize.sync().then(() => {
+//   initial();
+// });
 
 // simple route
 app.get("/", (req, res) => {
