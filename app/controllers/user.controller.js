@@ -14,13 +14,14 @@ exports.create = (req, res) => {
 
     // Create a user
     const user = {
-        title: req.body.title,
         username: req.body.username,
+        email: req.body.email,
         password: req.body.password,
+        title: req.body.title,
         firstName: req.body.firstName,
         lastName: req.body.lastName,
         status: req.body.status,
-        contact: req.body.contact,
+        contact: req.body.contact
     };
 
     // Save user in the database
@@ -80,8 +81,8 @@ exports.findOne = (req, res) => {
 exports.update = (req, res) => {
     const id = req.params.id;
     User.update(req.body, {
-            where: { id: id }
-        })
+        where: { id: id }
+    })
         .then(num => {
             if (num == 1) {
                 res.send({
@@ -104,8 +105,8 @@ exports.update = (req, res) => {
 exports.delete = (req, res) => {
     const id = req.params.id;
     User.destroy({
-            where: { id: id }
-        })
+        where: { id: id }
+    })
         .then(num => {
             if (num == 1) {
                 res.send({
@@ -127,9 +128,9 @@ exports.delete = (req, res) => {
 // Delete all Users from the database.
 exports.deleteAll = (req, res) => {
     User.destroy({
-            where: {},
-            truncate: false
-        })
+        where: {},
+        truncate: false
+    })
         .then(nums => {
             res.send({ message: `${nums} Users were deleted successfully!` });
         })

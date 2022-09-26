@@ -21,16 +21,16 @@ const db = require("./app/models");
 const Role = db.role;
 
 db.sequelize.sync();
-// force: true will drop the table if it already exists
+//force: true will drop the table if it already exists
 // db.sequelize.sync({force: true}).then(() => {
 //   console.log('Drop and Resync Database with { force: true }');
 //   initial();
 // });
 
-// Create default Roles
-// db.sequelize.sync().then(() => {
-//   initial();
-// });
+//Create default Roles
+db.sequelize.sync().then(() => {
+  initial();
+});
 
 // simple route
 app.get("/", (req, res) => {
